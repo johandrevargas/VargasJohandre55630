@@ -1,0 +1,34 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="../../static/aplicacion/css/login.css">
+</head>
+
+<body style="background: #6a11cb;">
+    <div class="login-dark" style="height: 695px;">
+        <form action="/funcion_login" method="post">
+            {% csrf_token %}
+            <h2 class="sr-only">Login Form</h2>
+            <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
+            <div class="form-group"><input class="form-control" type="email" name="email" id="email" placeholder="Email"></div>
+            <div class="form-group"><input class="form-control" type="password" name="password" id="password" placeholder="Password"></div>
+            <div class="form-group"><button class="btn btn-primary btn-block" value= "Entrar" type="submit" href="{% url 'home' %}">Entrar</button></div>
+            <div class="form-group"><button class="btn btn-primary btn-block" href="#">Registrarse</button></div>
+            <a class="forgot" href="#">Recuperar ingreso</a>
+        </form>
+        {% if messages %}
+        {% for msg in messages%}
+        <b>{{msg}}</b>
+        {% endfor %}
+        {% endif %}
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

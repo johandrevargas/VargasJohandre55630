@@ -1,0 +1,21 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+{% block titulo %}
+<h1 class="text-center p-3 mb-2 bg-gradient-primary text-white">Consultar informes</h1>
+{% endblock titulo %}
+
+
+{% block contenido %}
+
+    <form action="/buscar_informes" method="get">
+
+        {% csrf_token %}
+
+        <p class="bg-gradient-primary text-white">Patron a Buscar en el repositorio de informes: <input type="text" name="buscar" id="buscar"></p>
+
+        <input type="submit" value="Enviar">
+
+    </form>
+
+{% endblock contenido %}

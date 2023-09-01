@@ -18,6 +18,6 @@ Para usar la app se debe subir a producción el servidor, luego dirigirse en la 
 
 A continuación los usuarios de admin:
 
-user: johandre_vargas
-password: coderhouse_12345678
+*user: johandre_vargas
+*password: coderhouse_12345678
 

@@ -16,7 +16,8 @@ Para usar la app se debe subir a producción el servidor, luego dirigirse en la 
 *Se muestran los inconos respectivos para crear, modificar y eliminar la información.
 *Una vez termine su trabajo con la aplicación se debe ir a LogOut para cerrar sesión.
 
-A continuación los usuarios de admin.
+A continuación los usuarios de admin:
+
 user: johandre_vargas
 password: coderhouse_12345678
 

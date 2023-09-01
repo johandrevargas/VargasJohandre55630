@@ -1,0 +1,18 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+{% block titulo %}
+    <h1 class="text-center p-3 mb-2 bg-gradient-primary text-white">Listado de Informes</h1>
+{% endblock titulo %}
+
+
+{% block contenido %}
+    <h2 class="text-white">Informes</h2>
+    <form action="" method="POST">
+        {% csrf_token}
+        <table>
+            {{ forms.as_table }}
+        </table>
+        <input type="submit" value="Enviar">
+    </form>
+{% endblock contenido %}

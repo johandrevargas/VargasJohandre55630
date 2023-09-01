@@ -1,0 +1,52 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+{% block titulo %}
+    <div style="text-align: center" >
+        <h1 class="text-center p-3 mb-2 bg-gradient-primary text-white">Solicitar Nuevo Informe</h1>
+        <button><i class="fa fa-plus" style="font-size:48px" title="Agregar Informe"></i></button>
+    </div>
+    {% endblock titulo %}
+
+
+{% block contenido %}
+    
+
+    <h4 class="text-center p-3 mb-2 bg-gradient-primary text-white">Cantidad de Informes disponibles: {{ Informes|length }}</h4>
+    <div class="container">
+    <table class="table table-striped table-hover" align="center">
+        <thead>
+            <tr class="text-white text-center">
+                <th>Informe</th>
+                <th>Equipo Responsable<th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+    {% for c in Informes  %}
+            <tr>
+                <td class= "text-white text-center">{{ c.nombre_informes }}</td>
+                <td class= "text-white text-center">{{ c.equipo_responsable_informe }}</td>
+                <td class="text-center">
+                    <a
+                      href="{% url 'update_informes' informes.id %}"
+                      class="btn btn-primary"
+                      style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                      ><i class="fa fa-edit fa-sm" title="Edit Record"></i>
+                    </a>
+                    <a
+                      href="{% url 'deleteInformes' informe.id %}"
+                      class="btn btn-danger"
+                      style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                      ><i class="fa fa-trash fa-sm" title="Delete Record"></i>
+                    </a>
+                  </td>
+            </tr>
+    {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock contenido %}
+
+#{% url 'update_informe' informe.id %}
+#{% url 'delete_informe' informe.id %}

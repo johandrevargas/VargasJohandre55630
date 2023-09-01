@@ -1,0 +1,52 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+{% block titulo %}
+    <div style="text-align: center" >
+        <h1 class="text-center p-3 mb-2 bg-gradient-primary text-white">Tipo Informes</h1>
+        <a href="{% url 'create_tipoinforme' %}">
+            <button><i class="fa fa-plus" style="font-size:48px" title="Agregar Informe"></i></button>
+        </a>
+    </div>
+{% endblock titulo %}
+
+
+{% block contenido %}
+
+    <div>
+        <h4 class="text-center p-3 mb-2 bg-gradient-primary text-white">Presionar el botón para agregar nuevo tipo informe</h4>
+    </div>
+
+    <!-- <h4 class="text-center p-3 mb-2 bg-gradient-primary text-white">Cantidad de Informes disponibles: {{ InformesList|length }}</h4> -->
+    <div class="container">
+    <table class="table table-striped table-hover" align="center">
+        <thead>
+            <tr class="text-white text-center">
+                <th>Tipo Informe</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+    {% for tipoinforme in tipoinformes_list  %}
+            <tr>
+                <td class= "text-white text-center">{{ tipoinforme.tipo_informe }}</td>
+                <td class="text-center">
+                    <a
+                      href="{% url 'update_tipoinforme' tipoinforme.id %}"
+                      class="btn btn-primary"
+                      style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                      ><i class="fa fa-edit fa-sm" title="Edit Record"></i>
+                    </a>
+                    <a
+                      href="{% url 'delete_tipoinforme' tipoinforme.id %}"
+                      class="btn btn-danger"
+                      style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                      ><i class="fa fa-trash fa-sm" title="Delete Record"></i>
+                    </a>
+                  </td>
+            </tr>
+    {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock contenido %}
